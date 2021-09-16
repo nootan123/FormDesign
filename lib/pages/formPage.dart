@@ -1,5 +1,7 @@
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:forms/customInputForm.dart';
+import 'package:forms/fileLists.dart';
 
 class FormPage extends StatefulWidget {
   const FormPage({Key? key}) : super(key: key);
@@ -10,39 +12,6 @@ class FormPage extends StatefulWidget {
 
 class _FormPageState extends State<FormPage> {
   String dropDownValue = 'A';
-
-  List<Map<String, dynamic>> files = [
-    {
-      "key": "1",
-      "label": "EID Front Image",
-      "required": true,
-      "file": null,
-    },
-    {
-      "key": "2",
-      "label": "EID Back Image",
-      "required": true,
-      "file": null,
-    },
-    {
-      "key": "3",
-      "label": "PP Size Photo",
-      "required": true,
-      "file": null,
-    },
-    {
-      "key": "4",
-      "label": "Visa Image",
-      "required": true,
-      "file": null,
-    },
-    {
-      "key": "5",
-      "label": "Payment Slip",
-      "required": true,
-      "file": null,
-    },
-  ];
 
   Widget _buildFilePicker(String key) {
     return ElevatedButton(
@@ -274,52 +243,4 @@ class _FormPageState extends State<FormPage> {
       ),
     );
   }
-}
-
-Widget customInputForm(
-  String label,
-  String hintText,
-  String info,
-  bool required,
-) {
-  return Padding(
-    padding: const EdgeInsets.all(18.0),
-    child: Container(
-      // width: 250,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Text(
-                label,
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              (required == true)
-                  ? Text(
-                      '*',
-                      style: TextStyle(color: Colors.red),
-                    )
-                  : Container(),
-            ],
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-              hintText: hintText,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(7),
-              ),
-            ),
-          ),
-          Text(
-            info,
-            style: TextStyle(color: Colors.grey),
-          ),
-        ],
-      ),
-    ),
-  );
 }

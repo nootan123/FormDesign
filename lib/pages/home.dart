@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:forms/formPage.dart';
+import 'package:forms/pages/formPage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
