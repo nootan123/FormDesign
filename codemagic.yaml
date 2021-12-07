@@ -5,8 +5,8 @@
         instance_type: mac_mini
         environment:
             vars:
-               XCODE_WORKSPACE: "ios\Runner.xcodeproj\project.xcworkspace" # <-- Put the name of your Xcode workspace here
-               XCODE_SCHEME: _ # <-- Put the name of your Xcode scheme here
+               XCODE_WORKSPACE: "ios/Runner.xcodeproj/project.pbxproj" # <-- Put the name of your Xcode workspace here
+               XCODE_SCHEME: "ios/Runner.xcworkspace/contents.xcworkspacedata" # <-- Put the name of your Xcode scheme here
             xcode: 13.0
             cocoapods: default
         scripts:
